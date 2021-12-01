@@ -21,7 +21,7 @@ public class ClienteController : ControllerBase
         _clienteService = new ClienteService(context);
     }
 
-    // GET: api/Persona​
+    // GET: api/Cliente​
     [HttpGet]
     public ActionResult<ClienteViewModel> Gets()
     {
@@ -40,7 +40,7 @@ public class ClienteController : ControllerBase
         }
     }
 
-    // GET: api/Persona/5​
+    // GET: api/Cliente/5​
     [HttpGet("{idcliente}")]
     public ActionResult<ClienteViewModel> Get(string idcliente)
     {
@@ -50,7 +50,7 @@ public class ClienteController : ControllerBase
         return clienteViewModel;
     }
 
-    // POST: api/Persona​
+    // POST: api/Cliente​
     [HttpPost]
     public ActionResult<ClienteViewModel> Post(ClienteInputModel clienteInput)
     {
@@ -67,7 +67,7 @@ public class ClienteController : ControllerBase
         return Ok(response.Cliente);
     }
 
-    // DELETE: api/Persona/5​
+    // DELETE: api/Cliente/5​
     /*[HttpDelete("{idcliente}")]
     public ActionResult<string> Delete(string idcliente)
     {
@@ -90,4 +90,17 @@ public class ClienteController : ControllerBase
             };
         return cliente;
     }
+
+     // PUT: api/Cliente/5
+        [HttpPut("{cedula}")]
+        public ActionResult<string> Put(string cedula, Cliente cliente)
+        {
+            var id=_clienteService.BuscarxIdentificacion(cliente.Cedula);
+            if(id==null){
+                return BadRequest("No encontrado");
+            }
+            var mensaje=_clienteService.Actualizar(cliente);
+           return Ok(mensaje) ;
+
+        }
 }
