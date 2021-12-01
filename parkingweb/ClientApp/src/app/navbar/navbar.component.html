@@ -1,0 +1,47 @@
+<div class="navbar">
+  
+    <a style="font-size: 25px; font-weight: bold;" href="#"><img src="assets/logo.png" style="width: 20%;"> Parking App</a>
+  
+    <div class="subnav">
+      <button class="subnavbtn">Gestionar Cliente<i class="fa fa-caret-down"></i></button>
+      <div class="subnav-content">
+        <a [routerLink]='["/clienteregistrar"]'>Registrar Cliente</a>
+        <a [routerLink]='["/clienteconsultar"]'>Consultar Cliente</a>
+        <a [routerLink]='["/clientemodificar"]'>Modificar Cliente</a>
+      </div>
+    </div>
+  
+    <div class="subnav">
+      <button class="subnavbtn">Gestionar Vehiculo <i class="fa fa-caret-down"></i></button>
+      <div class="subnav-content">
+        <a [routerLink]='["/vehiculoregistrar"]'>Registrar Vehiculo</a>
+        <a [routerLink]='["/vehiculoconsultar"]'>Consultar Vehiculo</a>
+        <a [routerLink]='["/"]'>Modificar Vehiculo</a>
+      </div>
+    </div>
+  
+    <div class="subnav">
+      <button class="subnavbtn">Gestionar Estacionamiento<i class="fa fa-caret-down"></i></button>
+      <div class="subnav-content">
+        <a [routerLink]='["/estacionamientoregistrar"]'>Registrar Estacionamiento</a>
+        <a [routerLink]='["/estacionamientoconsultar"]'>Consultar Estacionamiento</a>
+        <a [routerLink]='["/"]'>Modificar Estacionamiento</a>
+      </div>
+    </div>
+    <div class="subnav">
+      <button class="subnavbtn">Gestionar Ticket<i class="fa fa-caret-down"></i></button>
+      <div class="subnav-content">
+        <a [routerLink]='["/ticketregistrar"]'>Registrar Ticket</a>
+        <a [routerLink]='["/ticketconsultar"]'>Consultar Ticket</a>
+      </div>
+    </div>
+  
+    <div class="subnav">
+      <img src="assets/user.png" alt="Logo" class="rounded-circle" alt="user" height="45" style="background: white;">
+      <div class="subnav-content" style="left: 89.95%; width: 10%; top: 9.2%;">
+        <a style="width: 100%;" [routerLink]='["/clienteregistrar"]'>Mi Cuenta</a>
+        <a style="width: 100%;" href="#">Cerrar Sesion</a>
+      </div>
+    </div>
+  
+  </div>

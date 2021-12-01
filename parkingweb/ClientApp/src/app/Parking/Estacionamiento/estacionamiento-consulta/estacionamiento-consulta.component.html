@@ -1,0 +1,36 @@
+<title>CONSULTAR ESTACIONAMIENTO</title>
+<br><br>
+<div align="center"><img src="../../../../assets/ConsultarV.png" alt="Logo"><br>
+    <h1>Consultar Estacionamiento</h1>
+</div><br>
+
+<form class="form-inline" class="container" id="Buscador">
+    <input class="form-control mr-sm-2" name="filtroEstacionamiento" [(ngModel)]="searchText" type="text" placeholder="Buscar por id_estacionamiento" aria-label="Search">
+</form><br><br>
+
+<!--<button id="divcontainer2" type="button" class="btn btn-primary">Consultar</button>-->
+<div class="table-responsive" id="rcorners1">
+    <table class="table table-bordered" id="myTable" >
+        <thead>
+            <tr class="thead-dark">
+                <th scope="col">#</th>
+                <th> <i class="fas fa-map-marked-alt"></i>__Id estacionamiento</th>
+                <th> <i class="far fa-paper-plane"></i>__Tipo de estacionamiento</th>
+                <th> <i class="bi bi-123"></i>__Numero de cupo</th>
+                <th> <i class="fas fa-unlock"></i>__Estado</th>
+                <!-- <th>Modificar/Eliminar</th> -->
+            </tr>
+        </thead>
+        <tbody class="table-primary">
+            <tr *ngFor="let estacionamiento of estacionamientos|filtroEstacionamiento:searchText; index as i ">
+                <td scope="row">{{ i + 1 }}</td>
+                <td>{{ estacionamiento.id_estacionamiento}} </td>
+                <td>{{ estacionamiento.tipo_estacionamiento }}</td>
+                <td>{{ estacionamiento.numero_cupo}}</td>
+                <td>{{ estacionamiento.estado }}</td>
+            </tr>
+        </tbody>
+       
+    </table>
+</div>
+<br>

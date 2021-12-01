@@ -1,0 +1,9 @@
+footer
+{
+    background-color: lightskyblue;
+    position: absolute;
+   /* top: 50%;
+    margin-top: 10%;*/
+    width: 100%;
+    color: black;
+}

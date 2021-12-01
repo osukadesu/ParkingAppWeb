@@ -1,0 +1,12 @@
+C:\Users\oscar\Desktop\ParkingAppWeb\Datos\bin\Debug\netstandard2.1\Datos.deps.json
+C:\Users\oscar\Desktop\ParkingAppWeb\Datos\bin\Debug\netstandard2.1\Datos.dll
+C:\Users\oscar\Desktop\ParkingAppWeb\Datos\bin\Debug\netstandard2.1\Datos.pdb
+C:\Users\oscar\Desktop\ParkingAppWeb\Datos\bin\Debug\netstandard2.1\Entidad.dll
+C:\Users\oscar\Desktop\ParkingAppWeb\Datos\bin\Debug\netstandard2.1\Entidad.pdb
+C:\Users\oscar\Desktop\ParkingAppWeb\Datos\obj\Debug\netstandard2.1\Datos.csproj.AssemblyReference.cache
+C:\Users\oscar\Desktop\ParkingAppWeb\Datos\obj\Debug\netstandard2.1\Datos.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\oscar\Desktop\ParkingAppWeb\Datos\obj\Debug\netstandard2.1\Datos.AssemblyInfoInputs.cache
+C:\Users\oscar\Desktop\ParkingAppWeb\Datos\obj\Debug\netstandard2.1\Datos.AssemblyInfo.cs
+C:\Users\oscar\Desktop\ParkingAppWeb\Datos\obj\Debug\netstandard2.1\Datos.csproj.CoreCompileInputs.cache
+C:\Users\oscar\Desktop\ParkingAppWeb\Datos\obj\Debug\netstandard2.1\Datos.dll
+C:\Users\oscar\Desktop\ParkingAppWeb\Datos\obj\Debug\netstandard2.1\Datos.pdb

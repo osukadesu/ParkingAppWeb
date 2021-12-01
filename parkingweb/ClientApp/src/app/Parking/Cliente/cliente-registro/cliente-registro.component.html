@@ -1,0 +1,80 @@
+<title>REGISTRO CLIENTE</title>
+<br><br>
+<div align="center"><img src="assets/user2.png" alt="Logo">
+    <h1>Registrar Cliente</h1>
+</div><br>
+<div id="divcontainer" class="forms">
+    <form [formGroup]="formregistro">
+        <div class="form-group">
+            <i class="bi bi-person-lines-fill"></i>__<label>Cedula</label>
+            <input id=cedula name="cedula" [ngClass]="{'is-invalid': control.cedula.errors && control.cedula.touched}" formControlName="cedula" type="text"  placeholder="Cedula">
+            <div *ngIf="control.cedula.errors" class="invalid-feedback">
+                <div *ngIf="control.cedula.errors.required">Se requiere la cedula</div>
+                <div *ngIf="control.cedula.errors.maxlength">Caracteres mayores a 12</div>
+            </div>
+        </div>
+
+        <div>
+            <i class="bi bi-person-fill"></i>__<label>Nombre</label>
+            <input type="text" id="nombre" [ngClass]="{'is-invalid': control.nombre.errors && control.nombre.touched}"
+            formControlName="nombre" name="nombre" placeholder="Nombre">
+            <div *ngIf="control.nombre.errors" class="invalid-feedback">
+                <div *ngIf="control.nombre.errors.required">Se requiere el nombre</div>
+            </div>
+        </div>
+
+        <div>
+            <i class="bi bi-person"></i>__<label>Apellido</label>
+            <input type="text" id="apellido" name="apellido"  [ngClass]="{'is-invalid': control.apellido.errors && control.apellido.touched}"
+            formControlName="apellido" placeholder="Apellido">
+            <div *ngIf="control.apellido.errors" class="invalid-feedback">
+                <div *ngIf="control.apellido.errors.required">Se requiere el apellido</div>
+            </div>
+        </div>
+
+        <div>
+            <i class="bi bi-gender-ambiguous"></i>__<label>Sexo</label>
+            <select id="sexo" name="sexo" formControlName="sexo"
+            [ngClass]="{'is-invalid': control.sexo.errors && control.sexo.touched}">
+                <option value="seleccionar">Seleccionar</option>
+                <option value="masculino">Masculino</option>
+                <option value="femenino">Femenino</option>
+            </select>
+            <div *ngIf="control.sexo.errors" class="invalid-feedback">
+                <div *ngIf="control.sexo.errors.required">Se requiere el sexo</div>
+            </div>
+        </div>
+
+        <div>
+            <i class="bi bi-calendar-fill"></i>__<label>Edad:</label>
+            <input type="date" id="edad" name="Edad" [ngClass]="{'is-invalid': control.edad.errors && control.edad.touched}" formControlName="edad">
+            <div *ngIf="control.edad.errors" class="invalid-feedback">
+                <div *ngIf="control.edad.errors.required">Se requiere la edad</div>
+            </div>
+        </div>
+
+        <div>
+            <i class="bi bi-telephone-fill"></i>__<label>Telefono</label><br>
+            <input type="number" id="telefono" name="telefono"   [ngClass]="{'is-invalid': control.telefono.errors && control.telefono.touched}"
+            formControlName="telefono"placeholder="Telefono">
+            <div *ngIf="control.telefono.errors" class="invalid-feedback">
+                <div *ngIf="control.telefono.errors.required">Se requiere el telefono</div>
+            </div>
+        </div>
+
+        <div>
+            <i class="bi bi-envelope-fill"></i>__<label>Email</label>
+            <input type="text" id="email" name="email"  [ngClass]="{'is-invalid': control.email.errors && control.email.touched}" formControlName="email" placeholder="Email">
+            <div *ngIf="control.email.errors" class="invalid-feedback">
+                <div *ngIf="control.email.errors.required">Se requiere el email</div>
+            </div>
+        </div>
+        <br>
+        <button id="divcontainer2" class="btn" (click)="onSubmit()" [disabled]="formregistro.invalid">
+            <span>
+                <a href="https://localhost:5001/clienteregistro"></a>
+            </span>
+            Guardar</button>
+    </form>
+</div>
+<br>

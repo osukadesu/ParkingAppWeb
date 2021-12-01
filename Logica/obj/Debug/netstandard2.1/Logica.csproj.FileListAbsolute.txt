@@ -1,0 +1,15 @@
+C:\Users\oscar\Desktop\ParkingAppWeb\Logica\bin\Debug\netstandard2.1\Logica.deps.json
+C:\Users\oscar\Desktop\ParkingAppWeb\Logica\bin\Debug\netstandard2.1\Logica.dll
+C:\Users\oscar\Desktop\ParkingAppWeb\Logica\bin\Debug\netstandard2.1\Logica.pdb
+C:\Users\oscar\Desktop\ParkingAppWeb\Logica\bin\Debug\netstandard2.1\Datos.dll
+C:\Users\oscar\Desktop\ParkingAppWeb\Logica\bin\Debug\netstandard2.1\Entidad.dll
+C:\Users\oscar\Desktop\ParkingAppWeb\Logica\bin\Debug\netstandard2.1\Datos.pdb
+C:\Users\oscar\Desktop\ParkingAppWeb\Logica\bin\Debug\netstandard2.1\Entidad.pdb
+C:\Users\oscar\Desktop\ParkingAppWeb\Logica\obj\Debug\netstandard2.1\Logica.csproj.AssemblyReference.cache
+C:\Users\oscar\Desktop\ParkingAppWeb\Logica\obj\Debug\netstandard2.1\Logica.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\oscar\Desktop\ParkingAppWeb\Logica\obj\Debug\netstandard2.1\Logica.AssemblyInfoInputs.cache
+C:\Users\oscar\Desktop\ParkingAppWeb\Logica\obj\Debug\netstandard2.1\Logica.AssemblyInfo.cs
+C:\Users\oscar\Desktop\ParkingAppWeb\Logica\obj\Debug\netstandard2.1\Logica.csproj.CoreCompileInputs.cache
+C:\Users\oscar\Desktop\ParkingAppWeb\Logica\obj\Debug\netstandard2.1\Logica.dll
+C:\Users\oscar\Desktop\ParkingAppWeb\Logica\obj\Debug\netstandard2.1\Logica.pdb
+C:\Users\oscar\Desktop\ParkingAppWeb\Logica\obj\Debug\netstandard2.1\Logica.csproj.CopyComplete

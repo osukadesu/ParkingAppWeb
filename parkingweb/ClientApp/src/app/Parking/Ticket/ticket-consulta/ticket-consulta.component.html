@@ -1,0 +1,46 @@
+<title>CONSULTAR TICKET</title>
+<br><br>
+<div align="center"><img src="../../../../assets/ConsultarV.png" alt="Logo"><br>
+    <h1>Consultar Ticket</h1>
+</div><br>
+
+<form class="form-inline" class="container" id="Buscador">
+    <input class="form-control mr-sm-2" name="filtroTicket" [(ngModel)]="searchText" type="text"
+        placeholder="Buscar por id_estacionamiento" aria-label="Search">
+</form><br><br>
+
+<!--<button id="divcontainer2" type="button" class="btn btn-primary">Consultar</button>-->
+<div class="table-responsive" id="rcorners1">
+    <table class="table table-bordered" id="myTable">
+        <thead>
+            <tr class="thead-dark">
+                <th scope="col">#</th>
+                <th> <i class="fas fa-money-check-alt"></i>__Id ticket</th>
+                <th> <i class="bi bi-person-lines-fill"></i>__Id cliente</th>
+                <th> <i class="fas fa-paper-plane"></i>__Id vehiculo</th>
+                <th> <i class="bi bi-calendar-fill"></i>__<label></label>Fecha de elaboración</th>
+                <th> <i class="bi bi-calendar-fill"></i>__<label></label>Fecha de salida</th>
+                <th> <i class="bi bi-calculator"></i>__Subtotal</th>
+                <th> <i class="bi bi-percent"></i>__Iva</th>
+                <th> <i class="bi bi-calculator-fill"></i>__Total</th>
+                <!-- <th>Modificar/Eliminar</th> -->
+            </tr>
+        </thead>
+        <tbody class="table-primary">
+            <tr *ngFor="let ticket of tickets|filtroTicket:searchText; index as i ">
+                <td scope="row">{{ i + 1 }}</td>
+                <td>{{ ticket.id_ticket}} </td>
+                <td>{{ ticket.cedula }}</td>
+                <td>{{ ticket.id_vehiculo }}</td>
+                <td>{{ ticket.id_estacionamiento }}</td>
+                <td>{{ ticket.fecha_elaboracion }}</td>
+                <td>{{ ticket.fecha_salida }}</td>
+                <td>{{ ticket.subtotal }}</td>
+                <td>{{ ticket.iva }}</td>
+                <td>{{ ticket.total }}</td>
+            </tr>
+        </tbody>
+
+    </table>
+</div>
+<br>

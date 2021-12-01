@@ -1,0 +1,60 @@
+<title>REGISTRO CLIENTE</title>
+<br><br>
+<div align="center"><img src="assets/user2.png" alt="Logo">
+    <h1>Registrar Cliente</h1>
+</div><br>
+<div id="divcontainer" class="forms">
+    <form [formGroup]="formregistro">
+        <div class="form-group">
+            <i class="bi bi-person-lines-fill"></i>__<label>Cedula</label>
+            <label>{{cliente.cedula}}</label>
+        </div>
+
+        <div>
+            <i class="bi bi-person-fill"></i>__<label>Nombre</label>
+            <input type="text" id="nombre" [(ngModel)]="cliente.nombre" name="nombre" placeholder="Nombre">
+           
+        </div>
+
+        <div>
+            <i class="bi bi-person"></i>__<label>Apellido</label>
+            <input type="text" id="apellido" name="apellido"  [(ngModel)]="cliente.apellido" placeholder="Apellido">
+           
+        </div>
+
+        <div>
+            <i class="bi bi-gender-ambiguous"></i>__<label>Sexo</label>
+            <select id="sexo" name="sexo" [(ngModel)]="cliente.sexo">
+                <option value="seleccionar">Seleccionar</option>
+                <option value="masculino">Masculino</option>
+                <option value="femenino">Femenino</option>
+            </select>
+           
+        </div>
+
+        <div>
+            <i class="bi bi-calendar-fill"></i>__<label>Edad:</label>
+            <input type="date" id="edad" name="Edad" [(ngModel)]="cliente.edad">
+            
+        </div>
+
+        <div>
+            <i class="bi bi-telephone-fill"></i>__<label>Telefono</label><br>
+            <input type="number" id="telefono" name="telefono" [(ngModel)]="cliente.telefono" placeholder="Telefono">
+           
+        </div>
+
+        <div>
+            <i class="bi bi-envelope-fill"></i>__<label>Email</label>
+            <input type="text" id="email" name="email"  [(ngModel)]="cliente.email" placeholder="Email">
+           
+        </div>
+        <br>
+        <button id="divcontainer2" class="btn" (click)="update()">
+            <span>
+                <a href="https://localhost:5001/clienteregistro"></a>
+            </span>
+            Actualizar</button>
+    </form>
+</div>
+<br>

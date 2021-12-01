@@ -1,0 +1,44 @@
+<title>CONSULTAR CLIENTES</title>
+<br><br>
+<div align="center"><img src="../../../../assets/ConsultarC.png" alt="Logo"><br>
+    <h1>Consultar Clientes</h1>
+</div><br>
+
+<form class="form-inline" class="container" id="Buscador">
+    <input class="form-control mr-sm-2" name="filtroCliente" [(ngModel)]="searchText" type="text"
+        placeholder="Buscar por Cedula" aria-label="Search">
+</form><br><br>
+
+<!--<button id="divcontainer2" type="button" class="btn btn-primary">Consultar</button>-->
+<div class="table-responsive" id="rcorners1">
+    <table class="table table-bordered" id="myTable">
+        <thead>
+            <tr class="thead-dark">
+                <th scope="col">#</th>
+                <th> <i class="bi bi-person-lines-fill"></i>__Cedula</th>
+                <th> <i class="bi bi-person-fill"></i>__Nombre</th>
+                <th> <i class="bi bi-person"></i>__Apellido</th>
+                <th> <i class="bi bi-gender-ambiguous"></i>__Sexo</th>
+                <th> <i class="bi bi-calendar-fill"></i>__Edad</th>
+                <th> <i class="bi bi-telephone-fill"></i>__Telefono</th>
+                <th><i class="bi bi-envelope-fill"></i>__Email</th>
+                <th>Modificar</th>
+            </tr>
+        </thead>
+
+        <tbody class="table-primary">
+            <tr *ngFor="let cliente of clientes|filtroCliente:searchText; index as i ">
+                <td scope="row">{{ i + 1 }}</td>
+                <td>{{ cliente.cedula}} </td>
+                <td>{{ cliente.nombre }}</td>
+                <td>{{ cliente.apellido }}</td>
+                <td>{{ cliente.sexo }}</td>
+                <td>{{ cliente.edad }}</td>
+                <td>{{ cliente.telefono }}</td>
+                <td>{{ cliente.email }}</td>
+               <td> <a routerLink='/clientemodificar/{{cliente.identificacion}}'>  ver </a></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<br>

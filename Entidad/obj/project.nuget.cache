@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "hnbb1cAWAOF7k3G2MuEyzwSMoObSFM5TOdIdAaY+s7giCu30RhbF8XXWRJhB6uw2rSeYiugR+Pr2gXqoH5gcuA==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\oscar\\Desktop\\ParkingAppWeb\\Entidad\\Entidad.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\oscar\\.nuget\\packages\\system.componentmodel.annotations\\5.0.0\\system.componentmodel.annotations.5.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}

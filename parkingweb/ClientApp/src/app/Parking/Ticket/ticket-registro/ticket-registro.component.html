@@ -1,0 +1,95 @@
+<title>REGISTRO TICKET</title>
+<br><br>
+<div align="center"><img src="assets/ticket.png" alt="Logo">
+    <h1>Registrar Ticket</h1>
+</div><br>
+<div id="divcontainer" class="forms">
+    <form [formGroup]="formregistro">
+        <div class="form-group">
+            <i class="fas fa-money-check-alt"></i>__<label>Id ticket</label>
+            <input id=id_ticket name="id_ticket" [ngClass]="{'is-invalid': control.id_ticket.errors && control.id_ticket.touched}" formControlName="id_ticket" type="text" placeholder="Id ticekt">
+            <div *ngIf="control.id_ticket.errors" class="invalid-feedback">
+                <div *ngIf="control.id_ticket.errors.required">Se requiere la id del ticket</div>
+            </div>
+        </div>
+
+        <div>
+            <i class="bi bi-person-lines-fill"></i>__<label>Id Cliente</label>
+            <select id="cedula" name="cedula"[ngClass]="{'is-invalid': control.cedula.errors && control.cedula.touched}" formControlName="cedula">
+                <option value="">Seleccionar</option>
+                <option value="cedula">123456789</option>
+                <option value="cedula">987654321</option>
+                <option value="cedula">789123456</option>
+            </select>
+            <div *ngIf="control.cedula.errors" class="invalid-feedback">
+                <div *ngIf="control.cedula.errors.required">Se requiere la cedula</div>
+            </div>
+        </div>
+
+        <div>
+            <i class="fas fa-paper-plane"></i>__<label>Id Vehiculo</label>
+            <select id="id_vehiculo" name="id_vehiculo" [ngClass]="{'is-invalid': control.id_vehiculo.errors && control.id_vehiculo.touched}" formControlName="id_vehiculo">
+                <option value="">Seleccionar</option>
+                <option value="id_vehiculo">vehiculo001</option>
+                <option value="id_vehiculo">vehiculo002</option>
+                <option value="id_vehiculo">vehiculo003</option>
+            </select>
+            <div *ngIf="control.id_vehiculo.errors" class="invalid-feedback">
+                <div *ngIf="control.id_vehiculo.errors.required">Se requiere el vehiculo</div>
+            </div>
+        </div>
+
+        <div>
+            <i class="fas fa-paper-plane"></i>__<label>Id Estacionamiento</label>
+            <select id="id_estacionamiento" name="id_estacionamiento"[ngClass]="{'is-invalid': control.id_estacionamiento.errors && control.id_estacionamiento.touched}" formControlName="id_estacionamiento">
+                <option value="">Seleccionar</option>
+                <option value="id_estacionamiento">estacionamiento001</option>
+                <option value="id_estacionamiento">estacionamiento002</option>
+                <option value="id_estacionamiento">estacionamiento003</option>
+            </select>
+            <div *ngIf="control.id_estacionamiento.errors" class="invalid-feedback">
+                <div *ngIf="control.id_estacionamiento.errors.required">Se requiere el estacionamiento</div>
+            </div>
+        </div>
+
+        <div>
+            <i class="bi bi-calendar-fill"></i>__<label>Fecha de elaboración:</label>
+            <input type="date" id="fecha_elaboracion" name="fecha_elaboracion" [ngClass]="{'is-invalid': control.fecha_elaboracion.errors && control.fecha_elaboracion.touched}" formControlName="fecha_elaboracion">
+            <div *ngIf="control.fecha_elaboracion.errors" class="invalid-feedback">
+                <div *ngIf="control.fecha_elaboracion.errors.required">Se requiere la fecha de elaboración</div>
+            </div>
+        </div>
+
+        <div>
+            <i class="bi bi-calendar-fill"></i>__<label>Fecha de salida:</label>
+            <input type="date" id="fecha_salida" name="fecha_salida"[ngClass]="{'is-invalid': control.fecha_salida.errors && control.fecha_salida.touched}" formControlName="fecha_salida">
+            <div *ngIf="control.fecha_salida.errors" class="invalid-feedback">
+                <div *ngIf="control.fecha_salida.errors.required">Se requiere la fecha de salida</div>
+            </div>
+        </div>
+
+        <div>
+            <i class="bi bi-calculator"></i>__<label>Subtotal</label><br>
+            <input type="number" id="subtotal" name="subtotal" value="0" disabled>
+        </div>
+
+        <div>
+            <i class="bi bi-percent"></i>__<label>Iva</label><br>
+            <input type="number" id="iva" name="iva" value="16" disabled>
+        </div>
+       
+        <div>
+            <i class="bi bi-calculator-fill"></i>__<label>Total</label><br>
+            <input type="number" id="total" name="total" disabled value="0">
+
+        </div>
+
+        <br>
+        <button id="divcontainer2" class="btn" (click)="onSubmit()" [disabled]="formregistro.invalid">
+            <span>
+                <a href="#"></a>
+            </span>
+            Guardar</button>
+    </form>
+</div>
+<br>
