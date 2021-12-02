@@ -12,13 +12,17 @@
 
         <div>
             <i class="bi bi-person-fill"></i>__<label>Tipo de estacionamiento</label>
-            <input type="text" id="tipo" [(ngModel)]="estacionamiento.tipo" name="tipo" placeholder="Tipo de estacionamiento">
-           
+            <select id="tipo" name="tipo" [(ngModel)]="estacionamiento.tipo">
+                <option value="">Seleccionar</option>
+                <option value="carro">Carro</option>
+                <option value="moto">Moto</option>
+                <option value="bici">Bicicleta</option>
+            </select>
         </div>
 
         <div>
             <i class="bi bi-person"></i>__<label>Numero de cupo</label>
-            <input type="text" id="numeroCupo" name="numeroCupo"  [(ngModel)]="estacionamiento.numeroCupo" placeholder="Numero de cupo">
+            <input type="number" id="numeroCupo" name="numeroCupo"  [(ngModel)]="estacionamiento.numeroCupo" placeholder="Numero de cupo">
            
         </div>
 

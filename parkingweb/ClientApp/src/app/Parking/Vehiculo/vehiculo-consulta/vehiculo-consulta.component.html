@@ -20,7 +20,7 @@
                 <th> <i class="far fa-paper-plane"></i>__ Tipo de vehiculo</th>
                 <th> <i class="fas fa-palette"></i>__Color</th>
                 <th> <i class="bi bi-calculator-fill"></i>__Precio</th>
-                <!-- <th>Modificar/Eliminar</th> -->
+                <th>Modificar</th>
             </tr>
         </thead>
         <tbody class="table-primary">
@@ -32,6 +32,7 @@
                 <td>{{ vehiculo.tipo   }}</td>
                 <td>{{ vehiculo.color  }}</td>
                 <td>{{ vehiculo.precio }}</td>
+                <td> <a routerLink='/vehiculomodificar/{{vehiculo.idVehiculo}}'>  ver </a></td>
             </tr>
         </tbody>
        

@@ -42,9 +42,9 @@ namespace Logica
             }
         }
 
-        public Vehiculo BuscarxIdentificacion(string id_vehiculo)
+        public Vehiculo BuscarxIdentificacion(string IdVehiculo)
         {
-            Vehiculo vehiculo = _context.Vehiculos.Find(id_vehiculo);
+            Vehiculo vehiculo = _context.Vehiculos.Find(IdVehiculo);
             return vehiculo;
         }
 

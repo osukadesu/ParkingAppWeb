@@ -42,9 +42,9 @@ namespace Logica
             }
         }
 
-        public Estacionamiento BuscarxIdentificacion(string id_estacionamiento)
+        public Estacionamiento BuscarxIdentificacion(string IdEstacionamiento)
         {
-            Estacionamiento estacionamiento = _context.Estacionamientos.Find(id_estacionamiento);
+            Estacionamiento estacionamiento = _context.Estacionamientos.Find(IdEstacionamiento);
             return estacionamiento;
         }
 

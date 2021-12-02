@@ -12,3 +12,4 @@ C:\Users\oscar\Desktop\ParkingAppWeb\Logica\obj\Debug\netstandard2.1\Logica.Asse
 C:\Users\oscar\Desktop\ParkingAppWeb\Logica\obj\Debug\netstandard2.1\Logica.csproj.CoreCompileInputs.cache
 C:\Users\oscar\Desktop\ParkingAppWeb\Logica\obj\Debug\netstandard2.1\Logica.dll
 C:\Users\oscar\Desktop\ParkingAppWeb\Logica\obj\Debug\netstandard2.1\Logica.pdb
+C:\Users\oscar\Desktop\ParkingAppWeb\Logica\obj\Debug\netstandard2.1\Logica.csproj.CopyComplete

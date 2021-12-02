@@ -42,9 +42,9 @@ namespace Logica
             }
         }
 
-        public Cliente BuscarxIdentificacion(string id_cliente)
+        public Cliente BuscarxIdentificacion(string idCliente)
         {
-            Cliente cliente = _context.Clientes.Find(id_cliente);
+            Cliente cliente = _context.Clientes.Find(idCliente);
             return cliente;
         }
 

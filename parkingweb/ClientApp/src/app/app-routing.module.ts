@@ -11,6 +11,8 @@ import { EstacionamientoConsultaComponent } from './Parking/Estacionamiento/esta
 import { TicketRegistroComponent } from './Parking/Ticket/ticket-registro/ticket-registro.component';
 import { TicketConsultaComponent } from './Parking/Ticket/ticket-consulta/ticket-consulta.component';
 import { ClienteModificarComponent } from './Parking/Cliente/cliente-modificar/cliente-modificar.component';
+import { EstacionamientoModificarComponent } from './Parking/Estacionamiento/estacionamiento-modificar/estacionamiento-modificar.component';
+import { VehiculoModificarComponent } from './Parking/Vehiculo/vehiculo-modificar/vehiculo-modificar.component';
 
 
 const routes: Routes = [
@@ -19,8 +21,10 @@ const routes: Routes = [
   { path: 'clienteconsultar', component: ClienteConsultaComponent },
   { path: 'clientemodificar/:identificacion', component: ClienteModificarComponent },
   { path: 'vehiculoregistrar', component: VehiculoRegistroComponent },
+  { path: 'vehiculomodificar/:identificacion', component: VehiculoModificarComponent },
   { path: 'vehiculoconsultar', component: VehiculoConsultaComponent },
   { path: 'estacionamientoregistrar', component: EstacionamientoRegistroComponent },
+  { path: 'estacionamientomodificar/:identificacion', component: EstacionamientoModificarComponent },
   { path: 'estacionamientoconsultar', component: EstacionamientoConsultaComponent },
   { path: 'ticketregistrar', component: TicketRegistroComponent },
   { path: 'ticketconsultar', component: TicketConsultaComponent },

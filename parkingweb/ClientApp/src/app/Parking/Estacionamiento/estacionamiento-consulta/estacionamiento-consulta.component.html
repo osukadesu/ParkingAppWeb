@@ -18,7 +18,7 @@
                 <th> <i class="far fa-paper-plane"></i>__Tipo de estacionamiento</th>
                 <th> <i class="bi bi-123"></i>__Numero de cupo</th>
                 <th> <i class="fas fa-unlock"></i>__Estado</th>
-                <!-- <th>Modificar/Eliminar</th> -->
+                <th>Modificar</th>
             </tr>
         </thead>
         <tbody class="table-primary">
@@ -28,6 +28,7 @@
                 <td>{{ estacionamiento.tipo }}</td>
                 <td>{{ estacionamiento.numeroCupo}}</td>
                 <td>{{ estacionamiento.estado }}</td>
+                <td> <a routerLink='/estacionamientomodificar/{{estacionamiento.idEstacionamiento}}'>  ver </a></td>
             </tr>
         </tbody>
        

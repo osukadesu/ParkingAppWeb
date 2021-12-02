@@ -42,9 +42,9 @@ namespace Logica
             }
         }
 
-        public Ticket BuscarxIdentificacion(string id_ticket)
+        public Ticket BuscarxIdentificacion(string idTicket)
         {
-            Ticket ticket = _context.Tickets.Find(id_ticket);
+            Ticket ticket = _context.Tickets.Find(idTicket);
             return ticket;
         }
 

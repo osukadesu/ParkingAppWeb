@@ -38,11 +38,14 @@
 
         <div>
             <i class="fas fa-unlock"></i>__<label>Estado</label>
-            <select id="estado" name="estado">
-                <option value="seleccionar" disabled >Seleccionar</option>
-                <option value="disponible" selected>Disponible</option>
-                <option value="ocupado"  disabled >Ocupado</option>
+            <select id="estado" name="estado" [ngClass]="{'is-invalid': control.estado.errors && control.estado.touched}" formControlName="estado">
+                <option value="seleccionar">Seleccionar</option>
+                <option value="disponible">Disponible</option>
+                <option value="ocupado">Ocupado</option>
             </select>
+            <div *ngIf="control.estado.errors" class="invalid-feedback">
+                <div *ngIf="control.estado.errors.required">Se requiere el estado</div>
+            </div>
         </div>
 
         <br>

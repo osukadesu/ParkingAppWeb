@@ -56,7 +56,7 @@
 
         <div>
             <i class="bi bi-percent"></i>__<label>Precio</label><br>
-            <label>{{precio}}</label>
+            <input type="text" id="precio" name="precio" [(ngModel)]="vehiculo.precio" placeholder="Precio">
         </div>
         <br>
         <button id="divcontainer2" class="btn" (click)="update()">

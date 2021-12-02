@@ -6,10 +6,8 @@ using System.Linq;
 using Entidad;
 using Datos;
 using EstacionamientoModel;
-using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 
-[Authorize]
 [Route("api/[controller]")]
 [ApiController]
 public class EstacionamientoController : ControllerBase

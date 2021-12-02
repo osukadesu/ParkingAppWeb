@@ -25,11 +25,13 @@ export class EstacionamientoRegistroComponent implements OnInit {
     this.estacionamiento.idEstacionamiento = '';
     this.estacionamiento.tipo = '';
     this.estacionamiento.numeroCupo;
+    this.estacionamiento.estado = '';
 
     this.formregistro = this.formBuilder.group({
       idEstacionamiento: [this.estacionamiento.idEstacionamiento, [Validators.required, Validators.maxLength(4), this.ValidaID]],
       tipo: [this.estacionamiento.tipo, Validators.required],
       numeroCupo: [this.estacionamiento.numeroCupo, Validators.required],
+      estado: [this.estacionamiento.estado, Validators.required],
     });
   }
 
