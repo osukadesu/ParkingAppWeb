@@ -43,14 +43,15 @@ export class TicketRegistroComponent implements OnInit {
     this.ticket.fechaSalida;
 
     this.formregistro = this.formBuilder.group({
-      id_ticket: [this.ticket.idTicket, [Validators.required, Validators.maxLength(4), this.ValidaID]],
+      idTicket: [this.ticket.idTicket, [Validators.required, Validators.maxLength(4), this.ValidaID]],
       cedula: [this.ticket.cedula, Validators.required],
-      id_vehiculo: [this.ticket.idVehiculo, Validators.required],
-      id_estacionamiento: [this.ticket.idEstacionamiento,Validators.required],
-      fecha_elaboracion: [this.ticket.fechaElaboracion, Validators.required],
-      fecha_salida: [this.ticket.fechaSalida, Validators.required],
+      idVehiculo: [this.ticket.idVehiculo, Validators.required],
+      idEstacionamiento: [this.ticket.idEstacionamiento,Validators.required],
+      fechaElaboracion: [this.ticket.fechaElaboracion, Validators.required],
+      fechaSalida: [this.ticket.fechaSalida, Validators.required],
     });
   }
+
 
   ConsultarClientes()
   {

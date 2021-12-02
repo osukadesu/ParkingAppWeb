@@ -18,12 +18,13 @@
                 <th> <i class="fas fa-money-check-alt"></i>__Id ticket</th>
                 <th> <i class="bi bi-person-lines-fill"></i>__Id cliente</th>
                 <th> <i class="fas fa-paper-plane"></i>__Id vehiculo</th>
+                <th> <i class="fas fa-map-marked-alt"></i>__Id estacionamiento</th>
                 <th> <i class="bi bi-calendar-fill"></i>__<label></label>Fecha de elaboración</th>
                 <th> <i class="bi bi-calendar-fill"></i>__<label></label>Fecha de salida</th>
                 <th> <i class="bi bi-calculator"></i>__Subtotal</th>
                 <th> <i class="bi bi-percent"></i>__Iva</th>
                 <th> <i class="bi bi-calculator-fill"></i>__Total</th>
-                <!-- <th>Modificar/Eliminar</th> -->
+                <th> <i class="bi bi-calendar-fill"></i>__<label></label>Dias</th>
             </tr>
         </thead>
         <tbody class="table-primary">
@@ -38,6 +39,7 @@
                 <td>{{ ticket.subtotal }}</td>
                 <td>{{ ticket.iva }}</td>
                 <td>{{ ticket.total }}</td>
+                <td>{{ ticket.dias }}</td>
             </tr>
         </tbody>
 
