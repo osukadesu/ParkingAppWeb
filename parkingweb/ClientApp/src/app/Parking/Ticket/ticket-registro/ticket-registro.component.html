@@ -7,7 +7,7 @@
     <form [formGroup]="formregistro">
         <div class="form-group">
             <i class="fas fa-money-check-alt"></i>__<label>Id ticket</label>
-            <input id=id_ticket name="idTicket" [ngClass]="{'is-invalid': control.idTicket.errors && control.idTicket.touched}" formControlName="idTicket" type="text" placeholder="Id ticekt">
+            <input id=idTicket name="idTicket" [ngClass]="{'is-invalid': control.idTicket.errors && control.idTicket.touched}" formControlName="idTicket" type="text" placeholder="Id ticekt">
             <div *ngIf="control.idTicket.errors" class="invalid-feedback">
                 <div *ngIf="control.idTicket.errors.required">Se requiere la id del ticket</div>
             </div>
@@ -15,9 +15,10 @@
 
         <div>
             <i class="bi bi-person-lines-fill"></i>__<label>Cedula Cliente</label>
-            <select id="cedula" name="cedula" [ngClass]="{'is-invalid': control.cedula.errors && control.cedula.touched}" formControlName="cedula">
+            <select id="cedula" name="cedula"
+                [ngClass]="{'is-invalid': control.cedula.errors && control.cedula.touched}" formControlName="cedula">
                 <option value="">Seleccionar</option>
-                <option *ngFor="let cliente of clientes" value="cedula">{{cliente.cedula}}</option>
+                <option *ngFor="let cliente of clientes" [value]="cliente.cedula">{{cliente.cedula}}</option>
             </select>
             <div *ngIf="control.cedula.errors" class="invalid-feedback">
                 <div *ngIf="control.cedula.errors.required">Se requiere la cedula</div>
@@ -27,9 +28,9 @@
 
         <div>
             <i class="bi bi-person-lines-fill"></i>__<label>Id Vehiculo</label>
-            <select id="id_vehiculo" name="idVehiculo" [ngClass]="{'is-invalid': control.idVehiculo.errors && control.idVehiculo.touched}" formControlName="idVehiculo">
+            <select id="idVehiculo" name="idVehiculo" [ngClass]="{'is-invalid': control.idVehiculo.errors && control.idVehiculo.touched}" formControlName="idVehiculo">
                 <option value="">Seleccionar</option>
-                <option *ngFor="let vehiculo of vehiculos" value="id_vehiculo">{{vehiculo.idVehiculo}}</option>
+                <option *ngFor="let vehiculo of vehiculos" [value]="vehiculo.idVehiculo">{{vehiculo.idVehiculo}}</option>
             </select>
             <div *ngIf="control.idVehiculo.errors" class="invalid-feedback">
                 <div *ngIf="control.idVehiculo.errors.required">Se requiere el id del vehiculo</div>
@@ -41,7 +42,7 @@
             <i class="bi bi-person-lines-fill"></i>__<label>Id Estacionamiento</label>
             <select id="idEstacionamiento" name="idEstacionamiento" [ngClass]="{'is-invalid': control.idEstacionamiento.errors && control.idEstacionamiento.touched}" formControlName="idEstacionamiento">
                 <option value="">Seleccionar</option>
-                <option *ngFor="let estacionamiento of estacionamientos" value="id_estacionamiento">{{estacionamiento.idEstacionamiento}}</option>
+                <option *ngFor="let estacionamiento of estacionamientos" [value]="estacionamiento.idEstacionamiento">{{estacionamiento.idEstacionamiento}}</option>
             </select>
             <div *ngIf="control.idEstacionamiento.errors" class="invalid-feedback">
                 <div *ngIf="control.idEstacionamiento.errors.required">Se requiere el id del estacionamiento</div>

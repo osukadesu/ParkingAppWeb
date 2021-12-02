@@ -10,4 +10,3 @@ C:\Users\oscar\Desktop\ParkingAppWeb\Datos\obj\Debug\netstandard2.1\Datos.Assemb
 C:\Users\oscar\Desktop\ParkingAppWeb\Datos\obj\Debug\netstandard2.1\Datos.csproj.CoreCompileInputs.cache
 C:\Users\oscar\Desktop\ParkingAppWeb\Datos\obj\Debug\netstandard2.1\Datos.dll
 C:\Users\oscar\Desktop\ParkingAppWeb\Datos\obj\Debug\netstandard2.1\Datos.pdb
-c:\Users\oscar\Desktop\ParkingAppWeb\Datos\obj\Debug\netstandard2.1\Datos.csproj.CopyComplete

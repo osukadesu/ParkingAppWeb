@@ -22,14 +22,17 @@ export class TicketRegistroComponent implements OnInit {
   clientes: Cliente[]=[];
   vehiculos: Vehiculo[]=[];
   estacionamientos: Estacionamiento[]=[];
-  constructor(private ticketService: TicketService, private clienteService:ClienteService,private vehiculoService:VehiculoService, private estacionamientoService:EstacionamientoService, private formBuilder: FormBuilder,
+  constructor(private ticketService: TicketService, private clienteService: ClienteService, private vehiculoService: VehiculoService, private estacionamientoService: EstacionamientoService, private formBuilder: FormBuilder,
     private modalService: NgbModal) { }
 
   ngOnInit() {
     this.ticket = new Ticket();
     this.buildForm();
     this.ConsultarClientes();
+    this.ConsultarVehiculos();
+    this.ConsultarEstacionamientos();
   }
+  
   private buildForm() {
     this.ticket = new Ticket();
     this.ticket.idTicket = '';
