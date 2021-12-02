@@ -41,10 +41,10 @@ public class ClienteController : ControllerBase
     }
 
     // GET: api/Cliente/5​
-    [HttpGet("{idcliente}")]
-    public ActionResult<ClienteViewModel> Get(string idcliente)
+    [HttpGet("{idCliente}")]
+    public ActionResult<ClienteViewModel> Get(string idCliente)
     {
-        var cliente = _clienteService.BuscarxIdentificacion(idcliente);
+        var cliente = _clienteService.BuscarxIdentificacion(idCliente);
         if (cliente == null) return NotFound();
         var clienteViewModel = new ClienteViewModel(cliente);
         return clienteViewModel;
@@ -66,15 +66,7 @@ public class ClienteController : ControllerBase
         }
         return Ok(response.Cliente);
     }
-
-    // DELETE: api/Cliente/5​
-    /*[HttpDelete("{idcliente}")]
-    public ActionResult<string> Delete(string idcliente)
-    {
-        string mensaje = _clienteService.Eliminar(idcliente);
-        return Ok(mensaje);
-    }
-*/
+    
     private Cliente MapearCliente(ClienteInputModel clienteInput)
     {
         var cliente =
@@ -92,10 +84,10 @@ public class ClienteController : ControllerBase
     }
 
      // PUT: api/Cliente/5
-        [HttpPut("{cedula}")]
-        public ActionResult<string> Put(string cedula, Cliente cliente)
+        [HttpPut("{idCliente}")]
+        public ActionResult<string> Put(string idCliente, Cliente cliente)
         {
-            var id=_clienteService.BuscarxIdentificacion(cliente.Cedula);
+            var id=_clienteService.BuscarxIdentificacion(cliente.IdCliente);
             if(id==null){
                 return BadRequest("No encontrado");
             }

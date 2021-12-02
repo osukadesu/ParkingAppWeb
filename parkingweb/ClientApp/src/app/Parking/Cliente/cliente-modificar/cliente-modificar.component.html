@@ -1,12 +1,13 @@
-<title>REGISTRO CLIENTE</title>
+<title>MODIFICAR CLIENTE</title>
 <br><br>
 <div align="center"><img src="assets/user2.png" alt="Logo">
-    <h1>Registrar Cliente</h1>
+    <h1>Modificar Cliente</h1>
 </div><br>
 <div id="divcontainer" class="forms">
-    <form [formGroup]="formregistro">
+    <form>
         <div class="form-group">
             <i class="bi bi-person-lines-fill"></i>__<label>Cedula</label>
+            <br>
             <label>{{cliente.cedula}}</label>
         </div>
 
@@ -34,7 +35,7 @@
 
         <div>
             <i class="bi bi-calendar-fill"></i>__<label>Edad:</label>
-            <input type="date" id="edad" name="Edad" [(ngModel)]="cliente.edad">
+            <input type="number" id="edad" name="Edad" [(ngModel)]="cliente.edad">
             
         </div>
 

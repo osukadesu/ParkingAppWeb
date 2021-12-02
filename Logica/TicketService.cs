@@ -8,7 +8,7 @@ namespace Logica
 {
     public class TicketService
     {
-         private readonly ParkingContext _context;
+       private readonly ParkingContext _context;
 
         public TicketService(ParkingContext context)
         {
@@ -42,25 +42,10 @@ namespace Logica
             }
         }
 
-        public Ticket BuscarxIdentificacion(string idticket)
+        public Ticket BuscarxIdentificacion(string id_ticket)
         {
-            Ticket ticket = _context.Tickets.Find(idticket);
+            Ticket ticket = _context.Tickets.Find(id_ticket);
             return ticket;
-        }
-
-        public string Eliminar(string idticket)
-        {
-            Ticket ticket = new Ticket();
-            if ((ticket = _context.Tickets.Find(idticket)) != null)
-            {
-                _context.Tickets.Remove(ticket);
-                _context.SaveChanges();
-                return $"Se ha eliminado la ticket.";
-            }
-            else
-            {
-                return $"No se encontro la ticket. ";
-            }
         }
 
         public class ConsultaTicketResponse

@@ -1,7 +1,8 @@
 export class Vehiculo {
-  id_vehiculo: string;
-  cedula: string;
-  marca: string;
-  tipo_vehiculo: string;
-  color: string;
+  idVehiculo: string = "";
+  cedula: string = "";
+  marca: string = "";
+  tipo: string = "";
+  color: string = "";
+  precio: number = 0;
 }

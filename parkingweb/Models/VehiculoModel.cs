@@ -10,7 +10,7 @@ namespace VehiculoModel
         public string Tipo { get; set; }
         public string Color { get; set; }
         public string Marca { get; set; }
-        public int Precio { get; set; }
+        public decimal Precio { get; set; }
     }
 
     public class VehiculoViewModel : VehiculoInputModel

@@ -42,25 +42,35 @@ namespace Logica
             }
         }
 
-        public Estacionamiento BuscarxIdentificacion(string idestacionamiento)
+        public Estacionamiento BuscarxIdentificacion(string id_estacionamiento)
         {
-            Estacionamiento estacionamiento = _context.Estacionamientos.Find(idestacionamiento);
+            Estacionamiento estacionamiento = _context.Estacionamientos.Find(id_estacionamiento);
             return estacionamiento;
         }
 
-        public string Eliminar(string idestacionamiento)
+        public string Actualizar(Estacionamiento estacionamientoNuevo)
         {
-            Estacionamiento estacionamiento = new Estacionamiento();
-            if ((estacionamiento = _context.Estacionamientos.Find(idestacionamiento)) != null)
+            try
             {
-                _context.Estacionamientos.Remove(estacionamiento);
-                _context.SaveChanges();
-                return $"Se ha eliminado el estacionamiento.";
+                var estacionamientoViejo = _context.Estacionamientos.Find(estacionamientoNuevo.IdEstacionamiento);
+                if (estacionamientoViejo != null)
+                {
+                    estacionamientoViejo.NumeroCupo = estacionamientoNuevo.NumeroCupo;
+                    _context.Estacionamientos.Update(estacionamientoViejo);
+                    _context.SaveChanges();
+                    return ($"El registro {estacionamientoNuevo.NumeroCupo} se ha modificado");
+                }
+                else
+                {
+                    return $"Lo sentimos, {estacionamientoNuevo.IdEstacionamiento} no se encuentra registrado";
+                }
+                
             }
-            else
+            catch (Exception e)
             {
-                return $"No se encontro el estacionamiento. ";
+                return $"Error inesperado al Modificar: {e.Message}";
             }
+            
         }
 
         public class ConsultaEstacionamientoResponse

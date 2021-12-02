@@ -7,31 +7,32 @@
     <form [formGroup]="formregistro">
         <div class="form-group">
             <i class="fas fa-map-marked-alt"></i>__<label>Id Estacionamiento</label>
-            <input id=id_estacionamiento name="id_estacionamiento"[ngClass]="{'is-invalid': control.id_estacionamiento.errors && control.id_estacionamiento.touched}" formControlName="id_estacionamiento" type="text" placeholder="Id estacionamiento">
-            <div *ngIf="control.id_estacionamiento.errors" class="invalid-feedback">
-                <div *ngIf="control.id_estacionamiento.errors.required">Se requiere la id del estacionamiento</div>
+            <input id=idEstacionamiento name="idEstacionamiento"[ngClass]="{'is-invalid': control.idEstacionamiento.errors && control.idEstacionamiento.touched}" formControlName="idEstacionamiento" type="text" placeholder="Id estacionamiento">
+            <div *ngIf="control.idEstacionamiento.errors" class="invalid-feedback">
+                <div *ngIf="control.idEstacionamiento.errors.required">Se requiere la id del estacionamiento</div>
+                <div *ngIf="control.idEstacionamiento.errors.maxlength">Caracteres mayores</div>
             </div>
         </div>
 
         <div>
             <i class="far fa-paper-plane"></i>__<label>Tipo de estacionamiento</label>
-            <select id="tipo_estacionamiento" name="tipo_estacionamiento" [ngClass]="{'is-invalid': control.tipo_estacionamiento.errors && control.tipo_estacionamiento.touched}" formControlName="tipo_estacionamiento">
+            <select id="tipo" name="tipo" [ngClass]="{'is-invalid': control.tipo.errors && control.tipo.touched}" formControlName="tipo">
                 <option value="seleccionar">Seleccionar</option>
                 <option value="carro">Carro</option>
                 <option value="moto">Moto</option>
-                <option value="bicicleta">Bicicleta</option>
+                <option value="bici">Bicicleta</option>
             </select>
-            <div *ngIf="control.tipo_estacionamiento.errors" class="invalid-feedback">
-                <div *ngIf="control.tipo_estacionamiento.errors.required">Se requiere el tipo de estacionamiento</div>
+            <div *ngIf="control.tipo.errors" class="invalid-feedback">
+                <div *ngIf="control.tipo.errors.required">Se requiere el tipo de estacionamiento</div>
             </div>
 
         </div>
 
         <div>
             <i class="bi bi-123"></i>__<label>Numero de cupo</label>
-            <input type="number" id="numero_cupo" name="numero_cupo" [ngClass]="{'is-invalid': control.numero_cupo.errors && control.numero_cupo.touched}" formControlName="numero_cupo" placeholder="Numero de cupo">
-            <div *ngIf="control.numero_cupo.errors" class="invalid-feedback">
-                <div *ngIf="control.numero_cupo.errors.required">Se requiere el Numero de cupo</div>
+            <input type="number" id="numeroCupo" name="numeroCupo" [ngClass]="{'is-invalid': control.numeroCupo.errors && control.numeroCupo.touched}" formControlName="numeroCupo" placeholder="Numero de cupo">
+            <div *ngIf="control.numeroCupo.errors" class="invalid-feedback">
+                <div *ngIf="control.numeroCupo.errors.required">Se requiere el Numero de cupo</div>
             </div>
         </div>
 

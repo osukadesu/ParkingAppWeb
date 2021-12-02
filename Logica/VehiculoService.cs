@@ -17,7 +17,7 @@ namespace Logica
         public GuardarVehiculoResponse Guardar(Vehiculo vehiculo)
         {
             try
-            {
+            {   
                 _context.Vehiculos.Add(vehiculo);
                 _context.SaveChanges();
                 return new GuardarVehiculoResponse(vehiculo);
@@ -42,25 +42,39 @@ namespace Logica
             }
         }
 
-        public Vehiculo BuscarxIdentificacion(string idvehiculo)
+        public Vehiculo BuscarxIdentificacion(string id_vehiculo)
         {
-            Vehiculo vehiculo = _context.Vehiculos.Find(idvehiculo);
+            Vehiculo vehiculo = _context.Vehiculos.Find(id_vehiculo);
             return vehiculo;
         }
 
-        public string Eliminar(string idvehiculo)
+        public string Actualizar(Vehiculo vehiculoNuevo)
         {
-            Vehiculo vehiculo = new Vehiculo();
-            if ((vehiculo = _context.Vehiculos.Find(idvehiculo)) != null)
+            try
             {
-                _context.Vehiculos.Remove(vehiculo);
-                _context.SaveChanges();
-                return $"Se ha eliminado el vehiculo.";
+                var vehiculoViejo = _context.Vehiculos.Find(vehiculoNuevo.IdVehiculo);
+                if (vehiculoViejo != null)
+                {
+                    vehiculoViejo.Cedula = vehiculoNuevo.Cedula;
+                    vehiculoViejo.Tipo = vehiculoNuevo.Tipo;
+                    vehiculoViejo.Color = vehiculoNuevo.Color;
+                    vehiculoViejo.Marca = vehiculoNuevo.Marca;
+                    vehiculoViejo.Precio = vehiculoNuevo.Precio;
+                    _context.Vehiculos.Update(vehiculoViejo);
+                    _context.SaveChanges();
+                    return ($"El registro {vehiculoNuevo.IdVehiculo} se ha modificado");
+                }
+                else
+                {
+                    return $"Lo sentimos, {vehiculoNuevo.IdVehiculo} no se encuentra registrado";
+                }
+                
             }
-            else
+            catch (Exception e)
             {
-                return $"No se encontro el vehiculo. ";
+                return $"Error inesperado al Modificar: {e.Message}";
             }
+            
         }
 
         public class ConsultaVehiculoResponse

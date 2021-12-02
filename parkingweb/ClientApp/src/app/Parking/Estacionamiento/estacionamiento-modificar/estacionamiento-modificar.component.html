@@ -1,0 +1,42 @@
+<title>MODIFICAR ESTACIONAMIENTO</title>
+<br><br>
+<div align="center"><img src="assets/user2.png" alt="Logo">
+    <h1>Modificar Estacionamiento</h1>
+</div><br>
+<div id="divcontainer" class="forms">
+    <form>
+        <div class="form-group">
+            <i class="bi bi-person-lines-fill"></i>__<label>Id Estacionamiento</label>
+            <label>{{estacionamiento.idEstacionamiento}}</label>
+        </div>
+
+        <div>
+            <i class="bi bi-person-fill"></i>__<label>Tipo de estacionamiento</label>
+            <input type="text" id="tipo" [(ngModel)]="estacionamiento.tipo" name="tipo" placeholder="Tipo de estacionamiento">
+           
+        </div>
+
+        <div>
+            <i class="bi bi-person"></i>__<label>Numero de cupo</label>
+            <input type="text" id="numeroCupo" name="numeroCupo"  [(ngModel)]="estacionamiento.numeroCupo" placeholder="Numero de cupo">
+           
+        </div>
+
+        <div>
+            <i class="fas fa-unlock"></i>__<label>Estado</label>
+            <select id="estado" name="estado" [(ngModel)]="estacionamiento.estado">
+                <option value="seleccionar">Seleccionar</option>
+                <option value="disponible">Disponible</option>
+                <option value="ocupado">Ocupado</option>
+            </select>
+        </div>
+        
+        <br>
+        <button id="divcontainer2" class="btn" (click)="update()">
+            <span>
+                <a href="https://localhost:5001/clienteregistro"></a>
+            </span>
+            Actualizar</button>
+    </form>
+</div>
+<br>

@@ -47,20 +47,35 @@ namespace Logica
             Persona persona = _context.Personas.Find(cedula);
             return persona;
         }
-
-        public string Eliminar(string cedula)
+        
+         public string Actualizar(Persona personaNuevo)
         {
-            Persona persona = new Persona();
-            if ((persona = _context.Personas.Find(cedula)) != null)
+            try
             {
-                _context.Personas.Remove(persona);
-                _context.SaveChanges();
-                return $"Se ha eliminado la persona.";
+                var personaViejo = _context.Personas.Find(personaNuevo.Cedula);
+                if (personaViejo != null)
+                {
+                    personaViejo.Nombre = personaNuevo.Nombre;
+                    personaViejo.Apellido = personaNuevo.Apellido;
+                    personaViejo.Edad = personaNuevo.Edad;
+                    personaViejo.Email = personaNuevo.Email;
+                    personaViejo.Telefono = personaNuevo.Telefono;
+                    personaViejo.Sexo = personaNuevo.Sexo;
+                    _context.Personas.Update(personaViejo);
+                    _context.SaveChanges();
+                    return ($"El registro {personaNuevo.Nombre} se ha modificado");
+                }
+                else
+                {
+                    return $"Lo sentimos, {personaNuevo.Cedula} no se encuentra registrado";
+                }
+                
             }
-            else
+            catch (Exception e)
             {
-                return $"No se encontro la persona. ";
+                return $"Error inesperado al Modificar: {e.Message}";
             }
+            
         }
 
         public class ConsultaPersonaResponse

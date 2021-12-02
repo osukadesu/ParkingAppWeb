@@ -47,7 +47,7 @@
 
         <div>
             <i class="bi bi-calendar-fill"></i>__<label>Edad:</label>
-            <input type="date" id="edad" name="Edad" [ngClass]="{'is-invalid': control.edad.errors && control.edad.touched}" formControlName="edad">
+            <input type="number" id="edad" name="Edad" [ngClass]="{'is-invalid': control.edad.errors && control.edad.touched}" formControlName="edad">
             <div *ngIf="control.edad.errors" class="invalid-feedback">
                 <div *ngIf="control.edad.errors.required">Se requiere la edad</div>
             </div>

@@ -27,6 +27,6 @@ namespace Entidad
         public string Marca { get; set; }
 
         [Column(TypeName = "decimal")]
-        public int Precio { get; set; }
+        public decimal Precio { get; set; }
     }
 }

@@ -22,15 +22,14 @@ export class EstacionamientoRegistroComponent implements OnInit {
   }
   private buildForm() {
     this.estacionamiento = new Estacionamiento();
-    this.estacionamiento.id_estacionamiento = '';
-    this.estacionamiento.tipo_estacionamiento = '';
-    this.estacionamiento.numero_cupo = '';
-    this.estacionamiento.estado = 'Disponible';
+    this.estacionamiento.idEstacionamiento = '';
+    this.estacionamiento.tipo = '';
+    this.estacionamiento.numeroCupo;
 
     this.formregistro = this.formBuilder.group({
-      id_estacionamiento: [this.estacionamiento.id_estacionamiento, [Validators.required, Validators.maxLength(4), this.ValidaID]],
-      tipo_estacionamiento: [this.estacionamiento.tipo_estacionamiento, Validators.required],
-      numero_cupo: [this.estacionamiento.numero_cupo, Validators.required],
+      idEstacionamiento: [this.estacionamiento.idEstacionamiento, [Validators.required, Validators.maxLength(4), this.ValidaID]],
+      tipo: [this.estacionamiento.tipo, Validators.required],
+      numeroCupo: [this.estacionamiento.numeroCupo, Validators.required],
     });
   }
 

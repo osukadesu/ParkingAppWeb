@@ -9,7 +9,7 @@ export class FiltroVehiculoPipe implements PipeTransform {
   transform(vehiculo: Vehiculo[], searchText: string): any {
     if (searchText == null) return vehiculo;
     return vehiculo.filter(p =>
-      p.id_vehiculo.toLowerCase()
+      p.idVehiculo.toLowerCase()
         .indexOf(searchText.toLowerCase()) !== -1);
   }
 

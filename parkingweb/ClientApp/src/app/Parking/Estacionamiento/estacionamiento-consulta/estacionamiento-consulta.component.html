@@ -24,9 +24,9 @@
         <tbody class="table-primary">
             <tr *ngFor="let estacionamiento of estacionamientos|filtroEstacionamiento:searchText; index as i ">
                 <td scope="row">{{ i + 1 }}</td>
-                <td>{{ estacionamiento.id_estacionamiento}} </td>
-                <td>{{ estacionamiento.tipo_estacionamiento }}</td>
-                <td>{{ estacionamiento.numero_cupo}}</td>
+                <td>{{ estacionamiento.idEstacionamiento}} </td>
+                <td>{{ estacionamiento.tipo }}</td>
+                <td>{{ estacionamiento.numeroCupo}}</td>
                 <td>{{ estacionamiento.estado }}</td>
             </tr>
         </tbody>

@@ -17,7 +17,7 @@ namespace PersonaModel
 
         public string Sexo { get; set; }
 
-        public string Telefono { get; set; }
+        public int Telefono { get; set; }
     }
 
     public class PersonaViewModel : PersonaInputModel

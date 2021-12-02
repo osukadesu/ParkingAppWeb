@@ -9,7 +9,7 @@ export class FiltroEstacionamientoPipe implements PipeTransform {
   transform(estacionamiento: Estacionamiento[], searchText: string): any {
     if (searchText == null) return estacionamiento;
     return estacionamiento.filter(p =>
-      p.id_estacionamiento.toLowerCase()
+      p.idEstacionamiento.toLowerCase()
         .indexOf(searchText.toLowerCase()) !== -1);
   }
 

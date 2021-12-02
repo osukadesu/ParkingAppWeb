@@ -12,7 +12,7 @@ using VehiculoModel;
 [ApiController]
 public class VehiculoController : ControllerBase
 {
-    private readonly VehiculoService _vehiculoService;
+   private readonly VehiculoService _vehiculoService;
 
     public IConfiguration Configuration { get; }
 
@@ -21,7 +21,7 @@ public class VehiculoController : ControllerBase
         _vehiculoService = new VehiculoService(context);
     }
 
-    // GET: api/Persona​
+    // GET: api/Vehiculo​
     [HttpGet]
     public ActionResult<VehiculoViewModel> Gets()
     {
@@ -40,17 +40,17 @@ public class VehiculoController : ControllerBase
         }
     }
 
-    // GET: api/Persona/5​
-    [HttpGet("{idvehiculo}")]
-    public ActionResult<VehiculoViewModel> Get(string idvehiculo)
+    // GET: api/Vehiculo/5​
+    [HttpGet("{idVehiculo}")]
+    public ActionResult<VehiculoViewModel> Get(string idVehiculo)
     {
-        var vehiculo = _vehiculoService.BuscarxIdentificacion(idvehiculo);
+        var vehiculo = _vehiculoService.BuscarxIdentificacion(idVehiculo);
         if (vehiculo == null) return NotFound();
         var vehiculoViewModel = new VehiculoViewModel(vehiculo);
         return vehiculoViewModel;
     }
 
-    // POST: api/Persona​
+    // POST: api/Vehiculo​
     [HttpPost]
     public ActionResult<VehiculoViewModel> Post(VehiculoInputModel vehiculoInput)
     {
@@ -66,26 +66,32 @@ public class VehiculoController : ControllerBase
         }
         return Ok(response.Vehiculo);
     }
-
-    // DELETE: api/Persona/5​
-    [HttpDelete("{idvehiculo}")]
-    public ActionResult<string> Delete(string idvehiculo)
-    {
-        string mensaje = _vehiculoService.Eliminar(idvehiculo);
-        return Ok(mensaje);
-    }
-
+    
     private Vehiculo MapearVehiculo(VehiculoInputModel vehiculoInput)
     {
         var vehiculo =
             new Vehiculo {
-            IdVehiculo = vehiculoInput.IdVehiculo,
-            Cedula = vehiculoInput.Cedula,
-            Tipo = vehiculoInput.Tipo,
-            Color = vehiculoInput.Color,
-            Marca = vehiculoInput.Marca,
-            Precio = vehiculoInput.Precio
+                IdVehiculo = vehiculoInput.IdVehiculo,
+                Cedula = vehiculoInput.Cedula,
+                Tipo = vehiculoInput.Tipo,
+                Color = vehiculoInput.Color,
+                Marca = vehiculoInput.Marca,
+                Precio = vehiculoInput.Precio,
+               
             };
         return vehiculo;
     }
+
+     // PUT: api/Vehiculo/5
+        [HttpPut("{idVehiculo}")]
+        public ActionResult<string> Put(string idVehiculo, Vehiculo vehiculo)
+        {
+            var id=_vehiculoService.BuscarxIdentificacion(vehiculo.IdVehiculo);
+            if(id==null){
+                return BadRequest("No encontrado");
+            }
+            var mensaje=_vehiculoService.Actualizar(vehiculo);
+           return Ok(mensaje) ;
+
+        }
 }

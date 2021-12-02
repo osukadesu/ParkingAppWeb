@@ -1,6 +1,6 @@
 export class Estacionamiento {
-  id_estacionamiento: string;
-  tipo_estacionamiento: string;
-  numero_cupo: string;
+  idEstacionamiento: string;
+  tipo: string;
+  numeroCupo: number;
   estado: string;
 }

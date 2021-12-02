@@ -26,6 +26,8 @@ import { FiltroVehiculoPipe } from './pipe/filtro-vehiculo.pipe';
 import { FiltroEstacionamientoPipe } from './pipe/filtro-estacionamiento.pipe';
 import { AlertModalComponent } from './@base/alert-modal/alert-modal.component';
 import { ClienteModificarComponent } from './Parking/Cliente/cliente-modificar/cliente-modificar.component';
+import { EstacionamientoModificarComponent } from './Parking/Estacionamiento/estacionamiento-modificar/estacionamiento-modificar.component';
+import { VehiculoModificarComponent } from './Parking/Vehiculo/vehiculo-modificar/vehiculo-modificar.component';
 
 @NgModule({
   declarations: [
@@ -48,7 +50,9 @@ import { ClienteModificarComponent } from './Parking/Cliente/cliente-modificar/c
     FiltroTicketPipe,
     FiltroVehiculoPipe,
     FiltroEstacionamientoPipe,
-    ClienteModificarComponent
+    ClienteModificarComponent,
+    EstacionamientoModificarComponent,
+    VehiculoModificarComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),

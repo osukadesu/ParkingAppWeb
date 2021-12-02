@@ -1,11 +1,12 @@
 export class Ticket {
-  id_ticket: string;
+  idTicket: string;
   cedula: string;
-  id_vehiculo: string;
-  id_estacionamiento: string;
-  fecha_elaboracion: Date;
-  fecha_salida: Date;
+  idVehiculo: string;
+  idEstacionamiento: string;
+  fechaElaboracion: Date;
+  fechaSalida: Date;
   subtotal: number;
   iva: number;
   total: number;
+  dias: number;
 }

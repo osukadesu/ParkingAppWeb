@@ -29,12 +29,12 @@
         <tbody class="table-primary">
             <tr *ngFor="let ticket of tickets|filtroTicket:searchText; index as i ">
                 <td scope="row">{{ i + 1 }}</td>
-                <td>{{ ticket.id_ticket}} </td>
+                <td>{{ ticket.idTicket}} </td>
                 <td>{{ ticket.cedula }}</td>
-                <td>{{ ticket.id_vehiculo }}</td>
-                <td>{{ ticket.id_estacionamiento }}</td>
-                <td>{{ ticket.fecha_elaboracion }}</td>
-                <td>{{ ticket.fecha_salida }}</td>
+                <td>{{ ticket.idVehiculo }}</td>
+                <td>{{ ticket.idEstacionamiento }}</td>
+                <td>{{ ticket.fechaElaboracion }}</td>
+                <td>{{ ticket.fechaSalida }}</td>
                 <td>{{ ticket.subtotal }}</td>
                 <td>{{ ticket.iva }}</td>
                 <td>{{ ticket.total }}</td>

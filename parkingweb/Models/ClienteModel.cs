@@ -6,9 +6,6 @@ namespace ClienteModel
     public class ClienteInputModel : PersonaInputModel
     {
         public string IdCliente { get; set; }
-        public string IdVehiculo { get; set; }
-        public string IdTicket { get; set; }
-
     }
 
     public class ClienteViewModel : ClienteInputModel

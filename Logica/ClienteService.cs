@@ -42,9 +42,9 @@ namespace Logica
             }
         }
 
-        public Cliente BuscarxIdentificacion(string cedula)
+        public Cliente BuscarxIdentificacion(string id_cliente)
         {
-            Cliente cliente = _context.Clientes.Find(cedula);
+            Cliente cliente = _context.Clientes.Find(id_cliente);
             return cliente;
         }
 
@@ -52,17 +52,22 @@ namespace Logica
         {
             try
             {
-                var clienteViejo = _context.Clientes.Find(clienteNuevo.Cedula);
+                var clienteViejo = _context.Clientes.Find(clienteNuevo.IdCliente);
                 if (clienteViejo != null)
                 {
                     clienteViejo.Nombre = clienteNuevo.Nombre;
+                    clienteViejo.Apellido = clienteNuevo.Apellido;
+                    clienteViejo.Edad = clienteNuevo.Edad;
+                    clienteViejo.Email = clienteNuevo.Email;
+                    clienteViejo.Telefono = clienteNuevo.Telefono;
+                    clienteViejo.Sexo = clienteNuevo.Sexo;
                     _context.Clientes.Update(clienteViejo);
                     _context.SaveChanges();
                     return ($"El registro {clienteNuevo.Nombre} se ha modificado");
                 }
                 else
                 {
-                    return $"Lo sentimos, {clienteNuevo.Cedula} no se encuentra registrado";
+                    return $"Lo sentimos, {clienteNuevo.IdCliente} no se encuentra registrado";
                 }
                 
             }

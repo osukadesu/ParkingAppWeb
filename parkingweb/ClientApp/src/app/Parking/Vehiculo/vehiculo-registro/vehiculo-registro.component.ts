@@ -2,7 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators, AbstractControl } from '@angular/forms';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { AlertModalComponent } from 'src/app/@base/alert-modal/alert-modal.component';
+import { ClienteService } from 'src/app/services/cliente.service';
 import { VehiculoService } from 'src/app/services/vehiculo.service';
+import { Cliente } from '../../models/cliente';
 import { Vehiculo } from '../../models/vehiculo';
 
 @Component({
@@ -11,28 +13,32 @@ import { Vehiculo } from '../../models/vehiculo';
   styleUrls: ['./vehiculo-registro.component.css']
 })
 export class VehiculoRegistroComponent implements OnInit {
-  formregistro: FormGroup;
+  precio: number = 0;
+  formRegistro: FormGroup;
   vehiculo: Vehiculo;
-  constructor(private vehiculoService: VehiculoService, private formBuilder: FormBuilder,
+  clientes: Cliente[]=[];
+  constructor(private vehiculoService: VehiculoService, private clienteService:ClienteService, private formBuilder: FormBuilder,
     private modalService: NgbModal) { }
 
   ngOnInit() {
     this.vehiculo = new Vehiculo();
+    this.vehiculo.precio = 0;
     this.buildForm();
+    this.ConsultarClientes();
   }
   private buildForm() {
     this.vehiculo = new Vehiculo();
-    this.vehiculo.id_vehiculo = '';
+    this.vehiculo.idVehiculo = '';
     this.vehiculo.cedula ='';
     this.vehiculo.marca = '';
-    this.vehiculo.tipo_vehiculo='';
+    this.vehiculo.tipo='';
     this.vehiculo.color='';
 
-    this.formregistro = this.formBuilder.group({
-      id_vehiculo: [this.vehiculo.id_vehiculo, [Validators.required, Validators.maxLength(4), this.ValidaID]],
+    this.formRegistro = this.formBuilder.group({
+      idVehiculo: [this.vehiculo.idVehiculo, [Validators.required, Validators.maxLength(4), this.ValidaID]],
       cedula: [this.vehiculo.cedula, Validators.required],
       marca: [this.vehiculo.marca, Validators.required],
-      tipo_vehiculo: [this.vehiculo.tipo_vehiculo,Validators.required],
+      tipo: [this.vehiculo.tipo,Validators.required],
       color: [this.vehiculo.color, Validators.required],
     });
   }
@@ -45,19 +51,34 @@ export class VehiculoRegistroComponent implements OnInit {
     return null;
   }
 
+    asignarPrecio()
+    {
+      let tipoVehiculo = this.formRegistro.value.tipo;
+      this.precio = tipoVehiculo =="carro" ? 2000 : tipoVehiculo == "bici" ? 500 : tipoVehiculo == "moto" ? 1000 : 0;
+    }
+    
+  
+  ConsultarClientes()
+  {
+    this.clienteService.get().subscribe(result => {
+          this.clientes = result;
+        });
+  }
+
   get control() {
-    return this.formregistro.controls;
+    return this.formRegistro.controls;
   }
 
   onSubmit() {
-    if (this.formregistro.invalid) {
+    if (this.formRegistro.invalid) {
       return;
     }
     this.add();
   }
 
   add() {
-    this.vehiculo = this.formregistro.value;
+    this.vehiculo = this.formRegistro.value;
+    this.vehiculo.precio = this.precio;
     this.vehiculoService.post(this.vehiculo).subscribe(p => {
       if (p != null) {
         const messageBox = this.modalService.open(AlertModalComponent)

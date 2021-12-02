@@ -47,12 +47,18 @@ namespace Entidad
         [Column(TypeName = "int")]
         public int Dias { get; set; }
 
+        [NotMapped]
+        public TimeSpan ts { get; set; }
+
+        
         public void CalcularTotal(Vehiculo vehiculo)
         {
+            ts = FechaSalida - FechaElaboracion;
+            Dias = ts.Days;
             Vehiculo = vehiculo;
             Iva = Vehiculo.Precio * 0.19m;
-            Total = Vehiculo.Precio * Dias;
-            SubTotal = Total / 1.19m;
+            SubTotal = Total / 0.19m;
+            Total = SubTotal * Dias;
         }
     }
 }

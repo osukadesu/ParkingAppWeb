@@ -4,23 +4,24 @@
     <h1>Registrar Vehiculo</h1>
 </div><br>
 <div id="divcontainer" class="forms">
-    <form [formGroup]="formregistro">
+    <form [formGroup]="formRegistro">
         <div class="form-group">
             <i class="fas fa-paper-plane"></i>__<label>Id Vehiculo</label>
-            <input id=id_vehiculo name="id_vehiculo" [ngClass]="{'is-invalid': control.id_vehiculo.errors && control.id_vehiculo.touched}" formControlName="id_vehiculo" type="text" placeholder="Id vehiculo">
-            <div *ngIf="control.id_vehiculo.errors" class="invalid-feedback">
-                <div *ngIf="control.id_vehiculo.errors.required">Se requiere la id del vehiculo</div>
-                <div *ngIf="control.id_vehiculo.errors.maxlength">Caracteres mayores</div>
+            <input id=idVehiculo name="idVehiculo"
+                [ngClass]="{'is-invalid': control.idVehiculo.errors && control.idVehiculo.touched}"
+                formControlName="idVehiculo" type="text" placeholder="Id vehiculo">
+            <div *ngIf="control.idVehiculo.errors" class="invalid-feedback">
+                <div *ngIf="control.idVehiculo.errors.required">Se requiere la id del vehiculo</div>
+                <div *ngIf="control.idVehiculo.errors.maxlength">Caracteres mayores</div>
             </div>
         </div>
 
         <div>
             <i class="bi bi-person-lines-fill"></i>__<label>Cedula Cliente</label>
-            <select id="cedula" name="cedula" [ngClass]="{'is-invalid': control.cedula.errors && control.cedula.touched}" formControlName="cedula">
+            <select id="cedula" name="cedula"
+                [ngClass]="{'is-invalid': control.cedula.errors && control.cedula.touched}" formControlName="cedula">
                 <option value="">Seleccionar</option>
-                <option value="cedula">123456789</option>
-                <option value="cedula">987654321</option>
-                <option value="cedula">789123456</option>
+                <option *ngFor="let cliente of clientes" [value]="cliente.cedula">{{cliente.cedula}}</option>
             </select>
             <div *ngIf="control.cedula.errors" class="invalid-feedback">
                 <div *ngIf="control.cedula.errors.required">Se requiere la cedula</div>
@@ -30,7 +31,9 @@
 
         <div>
             <i class="fas fa-edit"></i>__<label>Marca</label>
-            <input type="text" id="marca" name="marca" [ngClass]="{'is-invalid': control.marca.errors && control.marca.touched}" formControlName="marca" placeholder="marca">
+            <input type="text" id="marca" name="marca"
+                [ngClass]="{'is-invalid': control.marca.errors && control.marca.touched}" formControlName="marca"
+                placeholder="marca">
             <div *ngIf="control.marca.errors" class="invalid-feedback">
                 <div *ngIf="control.marca.errors.required">Se requiere la marca</div>
             </div>
@@ -38,20 +41,22 @@
 
         <div>
             <i class="far fa-paper-plane"></i>__ <label>Tipo de Vehiculo</label>
-            <select id="tipo_vehiculo" name="tipo_vehiculo" [ngClass]="{'is-invalid': control.tipo_vehiculo.errors && control.tipo_vehiculo.touched}" formControlName="tipo_vehiculo">
+            <select (change)="asignarPrecio()" id="tipo" name="tipo"
+                [ngClass]="{'is-invalid': control.tipo.errors && control.tipo.touched}" formControlName="tipo">
                 <option value="">Seleccionar</option>
                 <option value="carro">Carro</option>
                 <option value="moto">Moto</option>
-                <option value="bicicleta">Bicicleta</option>
+                <option value="bici">Bicicleta</option>
             </select>
-            <div *ngIf="control.tipo_vehiculo.errors" class="invalid-feedback">
-                <div *ngIf="control.tipo_vehiculo.errors.required">Se requiere el tipo de vehiculo</div>
+            <div *ngIf="control.tipo.errors" class="invalid-feedback">
+                <div *ngIf="control.tipo.errors.required">Se requiere el tipo de vehiculo</div>
             </div>
         </div>
 
         <div>
             <i class="fas fa-palette"></i>__<label>Color</label><br>
-            <select id="color" name="color" [ngClass]="{'is-invalid': control.color.errors && control.color.touched}" formControlName="color" >
+            <select id="color" name="color" [ngClass]="{'is-invalid': control.color.errors && control.color.touched}"
+                formControlName="color">
                 <option value="">Seleccionar</option>
                 <option value="rojo" style="background-color: red;">Rojo</option>
                 <option value="negro" style="background-color: black;color: white;">Negro</option>
@@ -68,8 +73,13 @@
             </div>
         </div>
 
+        <div>
+            <i class="bi bi-percent"></i>__<label>Precio</label><br>
+            <label>{{precio}}</label>
+        </div>
+
         <br>
-        <button id="divcontainer2" class="btn" (click)="onSubmit()" [disabled]="formregistro.invalid">
+        <button id="divcontainer2" class="btn" (click)="onSubmit()" [disabled]="formRegistro.invalid">
             <span>
                 <a href="https://localhost:5001/clienteregistro"></a>
             </span>

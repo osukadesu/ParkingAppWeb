@@ -23,8 +23,8 @@ namespace Entidad
         [Column(TypeName = "int")]
         public int Edad { get; set; }
 
-        [Column(TypeName = "varchar(13)")]
-        public string Telefono { get; set; }
+        [Column(TypeName = "int")]
+        public int Telefono { get; set; }
 
         [Column(TypeName = "varchar(40)")]
         public string Email { get; set; }
