@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AbstractControl, FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
-import { AlertModalComponent } from 'src/app/@base/alert-modal/alert-modal.component';
+import { RegistrosComponent } from 'src/app/@base/AlertModals/registros/registros.component';
 import { ClienteService } from 'src/app/services/cliente.service';
 import { Cliente } from '../../models/cliente';
 
@@ -35,7 +35,7 @@ export class ClienteRegistroComponent implements OnInit {
       nombre: [this.cliente.nombre, Validators.required],
       apellido: [this.cliente.apellido, Validators.required],
       sexo: [this.cliente.sexo, [Validators.required, this.ValidaSexo]],
-      edad: [this.cliente.edad, [Validators.required, Validators.min(18)]],
+      edad: [this.cliente.edad, [Validators.required, Validators.max(80), Validators.min(17), this.ValidaEdad]],
       email: [this.cliente.email, Validators.required],
       telefono: [this.cliente.telefono, Validators.required],
     });
@@ -45,6 +45,14 @@ export class ClienteRegistroComponent implements OnInit {
     const cantidad = control.value;
     if (cantidad <= 0 || cantidad >= 999999999999) {
       return { validCantidad: true, messageCantidad: 'Cantidad menor o igual a 0' };
+    }
+    return null;
+  }
+
+  private ValidaEdad(control: AbstractControl) {
+    const edad = control.value;
+    if (edad <= 17 || edad >= 99 ) {
+      return { validCantidad: true, messageCantidad: 'La edad es menor a 17 o mayor a 99' };
     }
     return null;
   }
@@ -72,7 +80,7 @@ export class ClienteRegistroComponent implements OnInit {
     this.cliente = this.formregistro.value;
     this.clienteService.post(this.cliente).subscribe(p => {
       if (p != null) {
-        const messageBox = this.modalService.open(AlertModalComponent)
+        const messageBox = this.modalService.open(RegistrosComponent)
         messageBox.componentInstance.title = "Resultado Operación";
         messageBox.componentInstance.cuerpo = 'Info: Se ha registrado un cliente';
         this.cliente = p;

@@ -24,10 +24,13 @@ import { FiltroClientePipe } from './pipe/filtro-cliente.pipe';
 import { FiltroTicketPipe } from './pipe/filtro-ticket.pipe';
 import { FiltroVehiculoPipe } from './pipe/filtro-vehiculo.pipe';
 import { FiltroEstacionamientoPipe } from './pipe/filtro-estacionamiento.pipe';
-import { AlertModalComponent } from './@base/alert-modal/alert-modal.component';
 import { ClienteModificarComponent } from './Parking/Cliente/cliente-modificar/cliente-modificar.component';
 import { EstacionamientoModificarComponent } from './Parking/Estacionamiento/estacionamiento-modificar/estacionamiento-modificar.component';
 import { VehiculoModificarComponent } from './Parking/Vehiculo/vehiculo-modificar/vehiculo-modificar.component';
+import { RegistrosComponent } from './@base/AlertModals/registros/registros.component';
+import { ModificarClienteComponent } from './@base/AlertModals/modificar-cliente/modificar-cliente.component';
+import { ModificarVehiculoComponent } from './@base/AlertModals/modificar-vehiculo/modificar-vehiculo.component';
+import { ModificarEstacionamientoComponent } from './@base/AlertModals/modificar-estacionamiento/modificar-estacionamiento.component';
 
 @NgModule({
   declarations: [
@@ -45,14 +48,17 @@ import { VehiculoModificarComponent } from './Parking/Vehiculo/vehiculo-modifica
     TicketConsultaComponent,
     FooterComponent,
     NavbarComponent,
-    AlertModalComponent,
     FiltroClientePipe,
     FiltroTicketPipe,
     FiltroVehiculoPipe,
     FiltroEstacionamientoPipe,
     ClienteModificarComponent,
     EstacionamientoModificarComponent,
-    VehiculoModificarComponent
+    VehiculoModificarComponent,
+    RegistrosComponent,
+    ModificarClienteComponent,
+    ModificarVehiculoComponent,
+    ModificarEstacionamientoComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
@@ -68,7 +74,7 @@ import { VehiculoModificarComponent } from './Parking/Vehiculo/vehiculo-modifica
     AppRoutingModule,
     NgbModule
   ],
-  entryComponents:[AlertModalComponent],
+  entryComponents:[ModificarClienteComponent,ModificarEstacionamientoComponent,ModificarVehiculoComponent],
   providers: [],
   bootstrap: [AppComponent]
 })

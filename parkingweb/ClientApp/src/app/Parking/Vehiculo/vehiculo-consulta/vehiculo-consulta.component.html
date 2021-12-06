@@ -31,7 +31,7 @@
                 <td>{{ vehiculo.marca  }}</td>
                 <td>{{ vehiculo.tipo   }}</td>
                 <td>{{ vehiculo.color  }}</td>
-                <td>{{ vehiculo.precio }}</td>
+                <td>{{ vehiculo.precio | currency: 'COP $' }}</td>
                 <td> <a routerLink='/vehiculomodificar/{{vehiculo.idVehiculo}}'>  ver </a></td>
             </tr>
         </tbody>

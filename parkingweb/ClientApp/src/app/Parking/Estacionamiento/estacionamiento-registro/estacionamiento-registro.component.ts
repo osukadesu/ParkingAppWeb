@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators, AbstractControl } from '@angular/forms';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
-import { AlertModalComponent } from 'src/app/@base/alert-modal/alert-modal.component';
+import { RegistrosComponent } from 'src/app/@base/AlertModals/registros/registros.component';
 import { EstacionamientoService } from 'src/app/services/estacionamiento.service';
 import { Estacionamiento } from '../../models/estacionamiento';
 
@@ -58,7 +58,7 @@ export class EstacionamientoRegistroComponent implements OnInit {
     this.estacionamiento = this.formregistro.value;
     this.estacionamientoService.post(this.estacionamiento).subscribe(p => {
       if (p != null) {
-        const messageBox = this.modalService.open(AlertModalComponent)
+        const messageBox = this.modalService.open(RegistrosComponent)
         messageBox.componentInstance.title = "Resultado Operación";
         messageBox.componentInstance.cuerpo = 'Info: Se ha registrado un estacionamiento';
         this.estacionamiento = p;

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators, AbstractControl } from '@angular/forms';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
-import { AlertModalComponent } from 'src/app/@base/alert-modal/alert-modal.component';
+import { RegistrosComponent } from 'src/app/@base/AlertModals/registros/registros.component';
 import { ClienteService } from 'src/app/services/cliente.service';
 import { VehiculoService } from 'src/app/services/vehiculo.service';
 import { Cliente } from '../../models/cliente';
@@ -81,7 +81,7 @@ export class VehiculoRegistroComponent implements OnInit {
     this.vehiculo.precio = this.precio;
     this.vehiculoService.post(this.vehiculo).subscribe(p => {
       if (p != null) {
-        const messageBox = this.modalService.open(AlertModalComponent)
+        const messageBox = this.modalService.open(RegistrosComponent)
         messageBox.componentInstance.title = "Resultado Operación";
         messageBox.componentInstance.cuerpo = 'Info: Se ha registrado un vehiculo';
         this.vehiculo = p;

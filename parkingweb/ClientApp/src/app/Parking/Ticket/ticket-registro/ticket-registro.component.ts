@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AbstractControl, FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
-import { AlertModalComponent } from 'src/app/@base/alert-modal/alert-modal.component';
+import { RegistrosComponent } from 'src/app/@base/AlertModals/registros/registros.component';
 import { ClienteService } from 'src/app/services/cliente.service';
 import { EstacionamientoService } from 'src/app/services/estacionamiento.service';
 import { TicketService } from 'src/app/services/ticket.service';
@@ -97,7 +97,7 @@ export class TicketRegistroComponent implements OnInit {
     this.ticket = this.formregistro.value;
     this.ticketService.post(this.ticket).subscribe(p => {
       if (p != null) {
-        const messageBox = this.modalService.open(AlertModalComponent)
+        const messageBox = this.modalService.open(RegistrosComponent)
         messageBox.componentInstance.title = "Resultado Operación";
         messageBox.componentInstance.cuerpo = 'Info: Se ha registrado un ticket';
         this.ticket = p;
