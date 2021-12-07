@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { ModificarVehiculoComponent } from 'src/app/@base/AlertModals/modificar-vehiculo/modificar-vehiculo.component';
 import { ClienteService } from 'src/app/services/cliente.service';
 import { VehiculoService } from 'src/app/services/vehiculo.service';
 import { Cliente } from '../../models/cliente';
@@ -26,9 +27,9 @@ export class VehiculoModificarComponent implements OnInit {
       this.vehiculo = p;
       
       if (p != null) {
-        const messageBox = this.modalService.open(VehiculoModificarComponent)
-        messageBox.componentInstance.title = "Resultado Operación";
-        messageBox.componentInstance.cuerpo = 'Info: puede actualizar los datos del vehiculo';
+        const messageBox = this.modalService.open(ModificarVehiculoComponent)
+        messageBox.componentInstance.title = "Busqueda Correcta";
+        messageBox.componentInstance.cuerpo = 'Resultado: puede actualizar los datos del vehiculo';
         messageBox.componentInstance.cuerpo2 = 'Datos del vehiculo:';
         messageBox.componentInstance.idVehiculo = 'Id vehiculo: '+this.vehiculo.idVehiculo;
         messageBox.componentInstance.marca = 'Marca: '+this.vehiculo.marca;
@@ -36,9 +37,9 @@ export class VehiculoModificarComponent implements OnInit {
 
       }
       else {
-        const messageBox = this.modalService.open(VehiculoModificarComponent)
-        messageBox.componentInstance.title = "Resultado Operación";
-        messageBox.componentInstance.cuerpo = 'Info: Error al consultar el vehiculo: '+this.vehiculo.idVehiculo;
+        const messageBox = this.modalService.open(ModificarVehiculoComponent)
+        messageBox.componentInstance.title = "Busqueda Incorrecta";
+        messageBox.componentInstance.cuerpo = 'Resultado: Error al consultar el vehiculo: '+this.vehiculo.idVehiculo;
       }
 
     });
@@ -52,7 +53,13 @@ export class VehiculoModificarComponent implements OnInit {
   }
   update() {
     this.vehiculoService.put(this.vehiculo).subscribe(p => {
-      alert(p);
+      const messageBox = this.modalService.open(ModificarVehiculoComponent)
+      messageBox.componentInstance.title = "Modificación Correcta";
+      messageBox.componentInstance.cuerpo = 'Resultado: se ha realizado una actualización a los datos del vehiculo';
+      messageBox.componentInstance.cuerpo2 = 'Datos del vehiculo:';
+      messageBox.componentInstance.idVehiculo = 'Id Vehiculo: '+this.vehiculo.idVehiculo;
+      messageBox.componentInstance.marca = 'Marca: '+this.vehiculo.marca;
+      messageBox.componentInstance.tipo = 'Tipo: '+this.vehiculo.tipo;
     });
   }
 }

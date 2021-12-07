@@ -82,8 +82,8 @@ export class VehiculoRegistroComponent implements OnInit {
     this.vehiculoService.post(this.vehiculo).subscribe(p => {
       if (p != null) {
         const messageBox = this.modalService.open(RegistrosComponent)
-        messageBox.componentInstance.title = "Resultado Operación";
-        messageBox.componentInstance.cuerpo = 'Info: Se ha registrado un vehiculo';
+        messageBox.componentInstance.title = "Registro Correcto";
+        messageBox.componentInstance.cuerpo = 'Resultado: Se ha registrado un vehiculo';
         this.vehiculo = p;
       }
     });

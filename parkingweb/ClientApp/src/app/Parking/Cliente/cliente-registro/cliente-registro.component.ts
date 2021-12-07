@@ -81,8 +81,8 @@ export class ClienteRegistroComponent implements OnInit {
     this.clienteService.post(this.cliente).subscribe(p => {
       if (p != null) {
         const messageBox = this.modalService.open(RegistrosComponent)
-        messageBox.componentInstance.title = "Resultado Operación";
-        messageBox.componentInstance.cuerpo = 'Info: Se ha registrado un cliente';
+        messageBox.componentInstance.title = "Registro Correcto";
+        messageBox.componentInstance.cuerpo = 'Resultado: Se ha registrado un cliente';
         this.cliente = p;
       }
     });

@@ -23,8 +23,8 @@ export class ClienteModificarComponent implements OnInit {
       this.cliente = p;
       if (p != null) {
         const messageBox = this.modalService.open(ModificarClienteComponent)
-        messageBox.componentInstance.title = "Resultado Operación";
-        messageBox.componentInstance.cuerpo = 'Info: puede actualizar los datos del cliente';
+        messageBox.componentInstance.title = "Busqueda Correcta";
+        messageBox.componentInstance.cuerpo = 'Resultado: puede actualizar los datos del cliente';
         messageBox.componentInstance.cuerpo2 = 'Datos del cliente:';
         messageBox.componentInstance.cedula = 'Cedula: '+this.cliente.cedula;
         messageBox.componentInstance.nombre = 'Nombre: '+this.cliente.nombre;
@@ -33,8 +33,8 @@ export class ClienteModificarComponent implements OnInit {
       }
       else {
         const messageBox = this.modalService.open(ModificarClienteComponent)
-        messageBox.componentInstance.title = "Resultado Operación";
-        messageBox.componentInstance.cuerpo = 'Info: Error al consultar el cliente: '+this.cliente.cedula;
+        messageBox.componentInstance.title = "Busqueda Incorrecta";
+        messageBox.componentInstance.cuerpo = 'Resultado: Error al consultar el cliente: '+this.cliente.cedula;
       }
     });
   }
@@ -42,8 +42,8 @@ export class ClienteModificarComponent implements OnInit {
   update() {
     this.clienteService.put(this.cliente).subscribe(p => {
       const messageBox = this.modalService.open(ModificarClienteComponent)
-        messageBox.componentInstance.title = "Resultado Operación";
-        messageBox.componentInstance.cuerpo = 'Info: se ha actualizado los datos del cliente';
+        messageBox.componentInstance.title = "Modificación Correcta";
+        messageBox.componentInstance.cuerpo = 'Resultado: se ha realizado una actualización a los datos del cliente';
         messageBox.componentInstance.cuerpo2 = 'Datos del cliente:';
         messageBox.componentInstance.cedula = 'Cedula: '+this.cliente.cedula;
         messageBox.componentInstance.nombre = 'Nombre: '+this.cliente.nombre;

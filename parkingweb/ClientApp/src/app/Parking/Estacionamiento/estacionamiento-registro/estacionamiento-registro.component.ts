@@ -59,8 +59,8 @@ export class EstacionamientoRegistroComponent implements OnInit {
     this.estacionamientoService.post(this.estacionamiento).subscribe(p => {
       if (p != null) {
         const messageBox = this.modalService.open(RegistrosComponent)
-        messageBox.componentInstance.title = "Resultado Operación";
-        messageBox.componentInstance.cuerpo = 'Info: Se ha registrado un estacionamiento';
+        messageBox.componentInstance.title = "Registro Correcto";
+        messageBox.componentInstance.cuerpo = 'Resultado: Se ha registrado un estacionamiento';
         this.estacionamiento = p;
       }
     });
