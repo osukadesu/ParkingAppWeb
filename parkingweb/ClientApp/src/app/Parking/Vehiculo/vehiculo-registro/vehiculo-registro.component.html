@@ -22,6 +22,7 @@
                 [ngClass]="{'is-invalid': control.cedula.errors && control.cedula.touched}" formControlName="cedula">
                 <option value="">Seleccionar</option>
                 <option *ngFor="let cliente of clientes" [value]="cliente.cedula">{{cliente.cedula}}</option>
+                
             </select>
             <div *ngIf="control.cedula.errors" class="invalid-feedback">
                 <div *ngIf="control.cedula.errors.required">Se requiere la cedula</div>

@@ -6,10 +6,8 @@
 <div id="divcontainer" class="forms">
     <form>
         <div class="form-group">
-            <i class="fas fa-paper-plane"></i>__<label>Id Vehiculo</label>
+            <i class="fas fa-paper-plane"></i>__<label>Id Vehiculo {{vehiculo.idVehiculo}}</label>
             <br>
-            <label>{{vehiculo.idVehiculo}}</label>
-           
         </div>
 
         <div>
@@ -55,8 +53,7 @@
         </div>
 
         <div>
-            <i class="bi bi-percent"></i>__<label>Precio</label><br>
-            <input type="text" id="precio" name="precio" [(ngModel)]="vehiculo.precio" placeholder="Precio">
+            <i class="bi bi-percent"></i>__<label>Precio {{vehiculo.precio | currency: 'COP $'}}</label>
         </div>
         <br>
         <button id="divcontainer2" class="btn" (click)="update()">
